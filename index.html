@@ -197,7 +197,7 @@
 		
 		function start_game() {
 			gameNumber = parseInt(document.getElementById("numberInput").value);
-			if (0 <= gameNumber && gameNumber < titleList.length) { // check if number is in range
+			if (1 <= gameNumber && gameNumber <= titleList.length) { // check if number is in range
 				answer = titleList[shuffledIndices[gameNumber - 1]];
 				gameInProgress = true;
 				guessArray = [];
@@ -238,7 +238,7 @@
 		}
 		
 		function random_game() {
-			document.getElementById("numberInput").value = Math.floor(Math.random() * titleList.length);
+			document.getElementById("numberInput").value = Math.floor(Math.random() * titleList.length) + 1;
 			if (guessArray.length == 0) {
 				start_game();
 			}
