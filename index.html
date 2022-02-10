@@ -77,6 +77,13 @@
 	
 		var canvas = document.getElementById("display");
 		var ctx = canvas.getContext("2d");
+		document.addEventListener("keydown", downHandler, false);
+		// handle enter key in guess input
+		function downHandler(e) {
+			if (e.target.id == "guessInput" && e.keyCode == 13) {
+				new_guess();
+			}
+		}
 		
 		var colorDict = {"W": "#F2F2F2", "B": "#787C7E", "Y": "#C9B458", "G": "#6AAA64"} // colors these letters represent
 		var textColorDict = {"W": "#000000", "B": "#FFFFFF", "Y": "#FFFFFF", "G": "#FFFFFF"}; // make text black if it's on white
